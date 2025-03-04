@@ -3,7 +3,7 @@ from distutils.core import setup
 setup(
     name="kbec_plugin",
     packages=["kbec_plugin"],
-    version="0.1",
+    version="0.2",
     license="GPL-3.0",
     description="Plugin framework for interacting with Battleye RCON",
     author="Katsi",
