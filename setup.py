@@ -19,7 +19,7 @@ setup(
         "Intended Audience :: Developers",
         "Topic :: Software Development :: Build Tools",
         "License-File: LICENSE",
-        "License-Expression: GPL-3.0",
+        "License-Expression: GPL-3.0-or-later",
         "Programming Language :: Python :: 3",
     ],
 )
