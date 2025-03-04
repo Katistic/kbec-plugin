@@ -21,6 +21,10 @@ class KBecPlugin:
             dispatch.add_listener(event, getattr(self, event))
 
     @property
+    def plugin_info(self) -> str:
+        return self.config.plugin_info
+
+    @property
     def events(self) -> set[str]:
         return {"on_login", "on_command", "on_message", "on_admin_login",
                 "on_player_connect", "on_player_guid", "on_player_verify_guid",
