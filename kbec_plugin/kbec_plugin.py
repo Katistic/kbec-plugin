@@ -3,6 +3,7 @@ from logging import Logger
 
 from typing import Any
 from berconpy.asyncio.player import Player
+from berconpy.asyncio.ban import Ban
 from berconpy.asyncio.dispatch import AsyncEventDispatcher
 
 class KBecPlugin:
@@ -30,6 +31,19 @@ class KBecPlugin:
                 "on_player_connect", "on_player_guid", "on_player_verify_guid",
                 "on_player_disconnect", "on_player_kick", "on_admin_message",
                 "on_admin_announcement", "on_admin_whisper", "on_player_message"}
+
+    async def fetch_admins(self) -> list[tuple[int, str]]:
+        return await self._kbec_client.rcon_manager.fetch_admins()
+
+    async def fetch_bans(self) -> list[Ban]:
+        return await self._kbec_client.rcon_manager.fetch_bans()
+
+    async def fetch_players(self) -> list[Player]:
+        return await self._kbec_client.rcon_manager.fetch_players()
+
+    @property
+    def players(self) -> list[Player]:
+        return self._kbec_client.rcon_manager.players
 
     # Refer to https://github.com/thegamecracks/berconpy/blob/main/src/berconpy/dispatch.py for docs on these events
 
