@@ -7,11 +7,10 @@ from berconpy.asyncio.ban import Ban
 from berconpy.asyncio.dispatch import AsyncEventDispatcher
 
 class KBecPlugin:
-    def __init__(self, config_path: str, kbec_client: object, ftp_manager_class: object):
+    def __init__(self, config_path: str, kbec_client: object):
         self.config = KBecConfig(config_path)
         self.logger: Logger = None
         self._kbec_client = kbec_client
-        self._ftp_manager_class = ftp_manager_class
 
     def _set_logger(self, logger: Logger):
         self.logger = logger
