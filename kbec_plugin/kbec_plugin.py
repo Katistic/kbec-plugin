@@ -41,6 +41,9 @@ class KBecPlugin:
     async def fetch_players(self) -> list[Player]:
         return await self._kbec_client.rcon_manager.fetch_players()
 
+    async def send(self, message: str) -> None:
+        return await self._kbec_client.rcon_manager.send(message)
+
     @property
     def players(self) -> list[Player]:
         return self._kbec_client.rcon_manager.players
